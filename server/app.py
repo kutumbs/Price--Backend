@@ -5,10 +5,15 @@ from flask_cors import CORS, cross_origin
 from flask_bcrypt import Bcrypt
 from model import db, User, Product, Store, ProductStore;
 from flask_migrate import Migrate;
+import os
+
+from dotenv import load_dotenv
 
 
+load_dotenv()
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PriceHunter.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PriceHunter.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['JWT_SECRET_KEY'] = '3dcc58af5f6d3a346e7a493c08bea722271ae47c4ac0d4fc76b984dc441ebc20' 
 

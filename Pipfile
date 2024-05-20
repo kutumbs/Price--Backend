@@ -16,6 +16,8 @@ flask-migrate = "*"
 selenium = "*"
 gunicorn =  "*"
 flask-bcrypt = "*"
+python-dotenv = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
