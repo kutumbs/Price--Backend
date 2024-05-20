@@ -59,7 +59,7 @@ from sqlalchemy.orm import validates
 import re
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pricehunter.db'  # Adjust as needed
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pricehunter_database_lsxq_user:f1UieqGJndcgiAEi3oyv14BywSrgtKU1@dpg-cp5kqlol5elc73e5uj40-a.oregon-postgres.render.com/pricehunter_database_lsxq'  # Adjust as needed
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 metadata = MetaData()
@@ -70,7 +70,7 @@ class User(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(280), nullable=False)
     products = db.relationship('Product', backref='user', lazy=True, cascade="all, delete-orphan")
 
     @validates('password')

@@ -14,7 +14,7 @@ load_dotenv()
 app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PriceHunter.db'
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pricehunter_database_user:0HwKdAmMDR47cJDhftcSFVrcjILPTWpg@dpg-cp5h5a8cmk4c73f22eng-a.oregon-postgres.render.com/Price_Hunter_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pricehunter_database_lsxq_user:f1UieqGJndcgiAEi3oyv14BywSrgtKU1@dpg-cp5kqlol5elc73e5uj40-a.oregon-postgres.render.com/pricehunter_database_lsxq'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['JWT_SECRET_KEY'] = '3dcc58af5f6d3a346e7a493c08bea722271ae47c4ac0d4fc76b984dc441ebc20' 
 
@@ -29,7 +29,7 @@ CORS(app)
 class UserRegister(Resource):
     @cross_origin()
     def post (self):
-        data = request.get_json()
+        data = request.get_json()[0]
         print(data)
         name = data.get("name")
         email = data.get("email")

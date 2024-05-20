@@ -72,6 +72,7 @@ with app.app_context():
             price=item[1],
             rating=item[2],
             image_url=item[3]
+        
         )
         db.session.add(product)
         db.session.commit()
