@@ -150,6 +150,7 @@ class Products(Resource):
             rating=data.get("rating"),
             price=data.get("price"),
             image_url=data.get("image_url"),
+            image_link =data.get("image_link"),
             user_id=data.get("user_id")
         )
         db.session.add(new_product)
