@@ -12,9 +12,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PriceHunter.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PriceHunter.db'
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pricehunter_database_lsxq_user:f1UieqGJndcgiAEi3oyv14BywSrgtKU1@dpg-cp5kqlol5elc73e5uj40-a.oregon-postgres.render.com/pricehunter_database_lsxq'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pricehunter_database_lsxq_user:f1UieqGJndcgiAEi3oyv14BywSrgtKU1@dpg-cp5kqlol5elc73e5uj40-a.oregon-postgres.render.com/pricehunter_database_lsxq'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['JWT_SECRET_KEY'] = '3dcc58af5f6d3a346e7a493c08bea722271ae47c4ac0d4fc76b984dc441ebc20' 
 

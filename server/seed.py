@@ -105,7 +105,8 @@ with app.app_context():
             name=item[0],
             price=item[1],
             rating=item[2],
-            image_url=item[3]
+            image_url=item[3],
+            image_link=item[4]
             
         
         )
