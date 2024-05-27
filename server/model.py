@@ -101,9 +101,9 @@ class Product(db.Model, SerializerMixin):
     name = db.Column(db.String(100), nullable=False)
     price = db.Column(db.String, nullable=False)
     rating = db.Column(db.String)
-    image_url = db.Column(db.String(100), nullable=False)
+    image_url = db.Column(db.String(500), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    image_link = db.Column(db.String(100))
+    image_link = db.Column(db.String(500))
     product_stores = db.relationship('ProductStore', backref='product', lazy='dynamic')
 
 class Store(db.Model, SerializerMixin):
