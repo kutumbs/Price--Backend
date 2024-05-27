@@ -139,7 +139,7 @@ api.add_resource(UserByID,"/users/<int:id>")
 
 class Products(Resource):
     def get(self):
-        products = [product.to_dict(only=('id', 'name', "rating", 'price', 'image_url','user_id','product_stores.store_id'
+        products = [product.to_dict(only=('id', 'name', "rating", 'price', 'image_url','image_link','user_id','product_stores.store_id'
 )) for product in Product.query.all()]
         return make_response(jsonify(products), 200)
 
